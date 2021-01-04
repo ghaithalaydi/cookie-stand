@@ -69,35 +69,60 @@ branchFive.caculateHourlySales();
 branchFive.caculateTotalSales();
 
 var grandparentElement = document.getElementById("body-tag");
-var parentElement=document.createElement("table");
+var parentElement = document.createElement("table");
 grandparentElement.appendChild(parentElement);
-var headerRow= document.createElement("tr");
+var headerRow = document.createElement("tr");
 parentElement.appendChild(headerRow);
-var firstbox =document.createElement("td");
-firstbox.textContent= "";
+//Hours row (Header)
+var firstbox = document.createElement("td");
+firstbox.textContent = "";
 headerRow.appendChild(firstbox);
-for(var x=0;x<workingHours.length;x++){
-    var box=[];
-     box[x] =document.createElement("td");
-     box[x].textContent= workingHours[x];
-     headerRow.appendChild(box[x])
+for (var x = 0; x < workingHours.length; x++) {
+    var box = [];
+    box[x] = document.createElement("td");
+    box[x].textContent = workingHours[x];
+    headerRow.appendChild(box[x])
 
 }
+//Table data, sales stats
 var branchArray = [branchOne, branchTwo, branchThree, branchFour, branchFive];
-var branchRows =[];
-var totalArray=[];
-for (var x=0;x<5;x++){
-    branchRows[x]=document.createElement("tr");
-    branchRows[x].textContent= branchArray[x].branchLocation
+var branchRows = [];
+var totalArray = [];
+for (var x = 0; x < 5; x++) {
+    branchRows[x] = document.createElement("tr");
+    branchRows[x].textContent = branchArray[x].branchLocation
     parentElement.appendChild(branchRows[x]);
-    for(var i=0;i<14;i++){
+    for (var i = 0; i < 14; i++) {
         var rowBox = [];
-        rowBox[i]=document.createElement("td");
-        rowBox[i].textContent=branchArray[x].arrhourlyCustomerNumberSales[i];
+        rowBox[i] = document.createElement("td");
+        rowBox[i].textContent = branchArray[x].arrhourlyCustomerNumberSales[i];
         branchRows[x].appendChild(rowBox[i]);
 
     }
-    totalArray[x]=document.createElement("td");
-    totalArray[x].textContent=branchArray[x].total;
+    totalArray[x] = document.createElement("td");
+    totalArray[x].textContent = branchArray[x].total;
     branchRows[x].appendChild(totalArray[x]);
 }
+//total row (footer)
+var hourlyTotalBranches = [];
+var totalBox = [];
+var hourlyTotalRow = document.createElement("tr");
+hourlyTotalRow.textContent = "totals";
+parentElement.appendChild(hourlyTotalRow);
+for (var i = 0; i < 14; i++) {
+    for (var x = 0; x < 14; x++) {
+        hourlyTotalBranches[x] = branchOne.arrhourlyCustomerNumberSales[x] + branchThree.arrhourlyCustomerNumberSales[x] + branchOne.arrhourlyCustomerNumberSales[x] + branchFour.arrhourlyCustomerNumberSales[x] + branchFive.arrhourlyCustomerNumberSales[x]
+    }
+    totalBox[i] = document.createElement('td');
+    totalBox[i].textContent = hourlyTotalBranches[i];
+    hourlyTotalRow.appendChild(totalBox[i])
+
+}
+//total coloumn 
+var finalTotal = 0;
+for (i = 0; i < 14; i++) {
+    finalTotal += hourlyTotalBranches[i];
+}
+var lastEntry = document.createElement("td");
+lastEntry.textContent = finalTotal;
+hourlyTotalRow.appendChild(lastEntry);

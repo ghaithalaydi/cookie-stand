@@ -9,8 +9,8 @@ var branchOne = {
     total: 0,
     hourlySales: [],
     numberOfCustomers: function (min, max) {
-        for (var i = 0; i < 13; i++) {
-            branchOne.arrCustomerNumber[i] = parseInt(Math.random() * (max - min) + min);
+        for (var i = 0; i < 14; i++) {
+            branchOne.arrCustomerNumber[i] = Math.floor(Math.random() * (max - min) + min);
             // console.log(this.arrCustomerNumber[i]);
         }   
 
@@ -18,9 +18,8 @@ var branchOne = {
     calculateSales: function () {
 
         for (var i = 0; i < this.arrCustomerNumber.length; i++) {
-            branchOne.hourlySales[i] = branchOne.arrCustomerNumber[i] * parseInt(this.averCookiesCustomer);
+            branchOne.hourlySales[i] = Math.floor(branchOne.arrCustomerNumber[i] * this.averCookiesCustomer);
             // console.log(this.hourlySales);
-            return this.hourlySales[i];
 
 
         }
@@ -45,17 +44,16 @@ var branchTwo = {
     hourlySales: [],
     total: 0,
     numberOfCustomers: function (min, max) {
-        for (var i = 0; i < 13; i++) {
-            branchTwo.arrCustomerNumber[i] = parseInt(Math.random() * (max - min) + min);
+        for (var i = 0; i < 14; i++) {
+            branchTwo.arrCustomerNumber[i] = Math.floor(Math.random() * (max - min) + min);
         }
 
     },
     calculateSales: function () {
 
         for (var i = 0; i < this.arrCustomerNumber.length; i++) {
-            branchTwo.hourlySales[i] = branchTwo.arrCustomerNumber[i] * parseInt(this.averCookiesCustomer);
+            branchTwo.hourlySales[i] = Math.floor(branchTwo.arrCustomerNumber[i] * this.averCookiesCustomer);
             // console.log(this.hourlySales);
-            return this.hourlySales[i];
 
 
         }
@@ -80,17 +78,16 @@ var branchThree = {
     hourlySales: [],
     total: 0,
     numberOfCustomers: function (min, max) {
-        for (var i = 0; i < 13; i++) {
-            branchThree.arrCustomerNumber[i] = parseInt(Math.random() * (max - min) + min);
+        for (var i = 0; i < 14; i++) {
+            branchThree.arrCustomerNumber[i] = Math.floor(Math.random() * (max - min) + min);
         }
 
     },
     calculateSales: function () {
 
         for (var i = 0; i < this.arrCustomerNumber.length; i++) {
-            branchThree.hourlySales[i] = branchThree.arrCustomerNumber[i] * parseInt(this.averCookiesCustomer);
+            branchThree.hourlySales[i] = Math.floor(branchThree.arrCustomerNumber[i] * this.averCookiesCustomer);
             // console.log(this.hourlySales);
-            return this.hourlySales[i];
 
 
         }
@@ -116,17 +113,16 @@ var branchFour = {
     hourlySales: [],
     total: 0,
     numberOfCustomers: function (min, max) {
-        for (var i = 0; i < 13; i++) {
-            branchFour.arrCustomerNumber[i] = parseInt(Math.random() * (max - min) + min);
+        for (var i = 0; i < 14; i++) {
+            branchFour.arrCustomerNumber[i] = Math.floor(Math.random() * (max - min) + min);
         }
 
     },
     calculateSales: function () {
 
         for (var i = 0; i < this.arrCustomerNumber.length; i++) {
-            branchFour.hourlySales[i] = branchFour.arrCustomerNumber[i] * parseInt(this.averCookiesCustomer);
+            branchFour.hourlySales[i] = Math.floor(branchFour.arrCustomerNumber[i] * this.averCookiesCustomer);
             // console.log(this.hourlySales);
-            return this.hourlySales[i];
 
 
         }
@@ -151,8 +147,8 @@ var branchFive = {
     hourlySales: [],
     total: 0,
     numberOfCustomers: function (min, max) {
-        for (var i = 0; i < 13; i++) {
-            branchFive.arrCustomerNumber[i] = parseInt(Math.random() * (max - min) + min);
+        for (var i = 0; i < 14; i++) {
+            branchFive.arrCustomerNumber[i] = Math.floor(Math.random() * (max - min) + min);
             // console.log(this.arrCustomerNumber);
         }
 
@@ -160,9 +156,8 @@ var branchFive = {
     calculateSales: function () {
 
         for (var i = 0; i < this.arrCustomerNumber.length; i++) {
-            branchFive.hourlySales[i] = branchFive.arrCustomerNumber[i] * parseInt(this.averCookiesCustomer);
+            branchFive.hourlySales[i] = Math.floor(branchFive.arrCustomerNumber[i] * this.averCookiesCustomer);
             console.log(this.hourlySales);
-            return this.hourlySales[i];
 
         }
     },
@@ -204,9 +199,12 @@ for (var x = 0; x < 5; x++) {
     var arrOfItem = [];
     for (var index = 0; index < 15; index++) {
         arrOfItem[index] = document.createElement('li');
-        arrOfItem[index].textContent = workingHours[index] + branchArray[x].calculateSales();
+        arrOfItem[index].textContent = workingHours[index] + branchArray[x].hourlySales[index];
         arrOfList[x].appendChild(arrOfItem[index]);
+        if (index== 14){
+            arrOfItem[index].textContent= workingHours[index] + branchArray[x].total;
+            arrOfList[x].appendChild(arrOfItem[index]);
+        }
     }
-    // arrOfList[x].textContent = branchArray[x].calculateTotal();
-    // arrOfItem[12].nextSibling(arrOfList[x]);
+    
 };

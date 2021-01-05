@@ -1,6 +1,9 @@
+body{
+    margin: 0;
+}
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Hanalei Fill', cursive;
-    color: rgb(104, 11, 141);
+    color:maroon;
 }
 h1,h4{
     text-align: center;
@@ -15,14 +18,19 @@ ul,ol{
     color: rgb(202, 202, 131);
 }
 nav ul{ 
-    background-color: rgb(172, 9, 172);
+    background-color: rgb(44, 43, 43);
     margin: 0px;
-    padding: 20px;
+    padding: 35px;
 }
 ul li{
     display: inline-block;
     margin-left: 30px;
     margin-right: 50px;
+    font-size: 25pt;
+    
+}
+ul li a:hover{
+    color: darkred;
 }
 img{
     margin:auto;
@@ -30,4 +38,44 @@ img{
 }
 body{
     background-color: rgb(14, 15, 0);
+}
+body nav img{
+    float: left;
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+
+}
+table tr td img{
+    width: 300px;
+    height: 180px;
+    margin-left: 20px;
+}
+footer ul{
+    text-align: center;
+    font-size: 2pt;
+    margin: 0;
+}
+footer ul li{
+    margin-bottom: 20px;
+}
+footer{
+    background-color: rgb(44, 43, 43) ;
+    
+}
+h1{
+    font-size: 35pt;
+}
+h4 {
+    font-size: 15pt;
+}
+section ol img{
+    width: 150px;
+    height: 150px;
+}
+figcaption{
+    text-align: center;
+}
+section ol li{
+    display: inline-block;
 }

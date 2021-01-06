@@ -6,26 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Page</title>
 </head>
+<link rel="stylesheet" href="salesstyle.css">
 
-<body >
-    <fieldset>
-        <legend>Kindly enter the Data below for branch creation!</legend>
-    <form action="" id="branchCreation">
-        <label for="city">Branch Location
-            <input type="text" name="branch" id="city">
-        </label> 
-        <label for="min">Minimum Customers
-            <input type="number" name="mincustomers" id="min">
-        </label>
-        <label for="max">Maximum Customers
-            <input type="number" name="maxcustomers" id="max">
-        </label>
-        <label for="aveSales">Average Sales
-            <input type="number" step="0.01" name="averagesales" placeholder="Please Enter Float" id="aveSales">
-        </label>
-        <input type="submit" value="Create Branch">
-    </form>
-</fieldset>
+<body>
+
     <nav>
         <ul>
             <li><a href="http://127.0.0.1:5501/index.html">Home</a></li>
@@ -33,9 +17,34 @@
             <li>Contact Us</li>
         </ul>
     </nav>
-    <div id="body-tag" ></div>
-
+    <main>
+        <fieldset>
+            <legend>Kindly enter the Data below for branch creation!</legend>
+            <form action="" id="branchCreation">
+                <label for="city">Branch Location
+                    <input type="text" name="branch" id="city" required>
+                </label>
+                <label for="min">Minimum Customers
+                    <input type="number" name="mincustomers" id="min" required>
+                </label>
+                <label for="max">Maximum Customers
+                    <input type="number" name="maxcustomers" id="max" required>
+                </label>
+                <label for="aveSales">Average Sales
+                    <input type="number" step="0.01" name="averagesales" placeholder="Please Enter Float" id="aveSales"
+                        required>
+                </label>
+                <input type="submit" value="Create Branch">
+            </form>
+        </fieldset>
+        <br>
+        <hr>
+        <div id="body-tag"></div>
+    </main>
+    <footer>
+    </footer>
     <script src="apps.js"></script>
+
 </body>
 
 </html>

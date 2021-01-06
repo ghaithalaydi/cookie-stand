@@ -1,0 +1,40 @@
+nav ul{ 
+    background-color: rgb(44, 43, 43);
+    margin: 0px;
+    padding: 35px;
+}
+ul li{
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 50px;
+    font-size: 25pt;
+    
+}
+ul li a:hover{
+    color: darkred;
+}
+fieldset {
+    background-color: pink ;
+}
+table{
+    display: inline-table;
+    margin-left: 200px;
+    text-align: center;
+    border-style: solid;
+    border-color: rebeccapurple;
+    border-collapse: collapse;
+}
+table td{
+        border-style: groove;
+    border-color: lightsalmon;
+    font-size: larger;
+    
+}
+table th{
+    border-style: solid;
+    border-color:purple;
+}
+footer{
+    background-color: rgb(44, 43, 43) ;
+    
+}
